@@ -1,0 +1,23 @@
+# Python virtual environments
+bismaya01/
+venv/
+.env/
+.venv/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / tooling caches
+node_modules/
+
+# Misc
+*.log
+
+# MkDocs build output
+site/
+
+# Jupyter
+.ipynb_checkpoints/

@@ -1,0 +1,141 @@
+/* Additional site tweaks for MkDocs Material */
+:root {
+  --md-primary-fg-color: #3949ab;
+  --md-accent-fg-color: #7e57c2;
+  /* Badge semantic colors */
+  --badge-complete-bg: #2e7d32;
+  --badge-planning-bg: #f9a825;
+  --badge-draft-bg: #0288d1;
+  --badge-upcoming-bg: #6d4c41;
+  /* Progress bar colors */
+  --progress-bg: #e0e0e0;
+  --progress-fill: var(--md-primary-fg-color);
+}
+
+/*
+  Primary + complementary accent palette
+  - Primary: Dark Slate Gray (#2F4F4F)
+  - Accent:  Slate Teal (#3A6F6F) for a subtle, beautiful contrast
+*/
+:root {
+  --app-primary: #9205d8; /* Dark Slate Gray */
+  --app-primary-rgb: 47,79,79;
+  --app-accent: #ffffff;  /* Slate Teal */
+  --app-accent-rgb: 58,111,111;
+
+  /* Map to Material color tokens */
+  --md-primary-fg-color: var(--app-primary);
+  --md-primary-fg-color--light: #4a6b6b; /* manual lighter tint */
+  --md-primary-fg-color--dark: #1f3535;  /* manual darker shade */
+  --md-accent-fg-color: var(--app-accent);
+  --md-typeset-a-color: var(--app-primary);
+
+  /* Our components */
+  --curriculum-progress-color: var(--app-primary);
+}
+
+/* Ensure dark scheme also uses the same primary */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--app-primary);
+  --md-primary-fg-color--light: #5a7c7c;
+  --md-primary-fg-color--dark: #182626;
+  --md-accent-fg-color: var(--app-accent);
+  --md-typeset-a-color: var(--app-primary);
+}
+
+/* Smooth theme transitions */
+[data-md-color-scheme], :root {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.katex-display { margin: 1.2rem 0; }
+
+/* Badge style mimic from original site */
+.badge { display: inline-block; background: var(--md-primary-fg-color); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 0.65rem; letter-spacing: .5px; margin: 0 4px 4px 0; line-height:1.2; }
+.badge-complete { background:var(--badge-complete-bg); }
+.badge-planning { background:var(--badge-planning-bg); color:#000; }
+.badge-draft { background:var(--badge-draft-bg); }
+.badge-upcoming { background:var(--badge-upcoming-bg); }
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --progress-bg: #424242;
+    --badge-planning-bg: #fbc02d;
+    --badge-upcoming-bg: #5d4037;
+  }
+  /* Improve KaTeX contrast in dark mode */
+  .katex { color: #eceff1; }
+}
+
+/* Progress bar component */
+.curriculum-progress { margin: 1.5rem 0 2rem; }
+.curriculum-progress__label { font-size: .75rem; letter-spacing: .5px; text-transform: uppercase; margin-bottom: .3rem; opacity:.8; }
+.curriculum-progress__track { background: var(--progress-bg); border-radius: 6px; height: 10px; position: relative; overflow: hidden; }
+.curriculum-progress__fill { background: var(--progress-fill); width: 0%; height: 100%; transition: width .4s ease; }
+.curriculum-progress__percent { font-size: .7rem; margin-top: .35rem; opacity:.75; }
+
+/* Note completion button */
+.note-complete-toggle { cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; background:var(--md-primary-fg-color); color:#fff; border:none; padding:4px 10px; border-radius:18px; font-size:.6rem; letter-spacing:.5px; text-transform:uppercase; font-weight:600; box-shadow:0 1px 2px rgba(0,0,0,.3); }
+.note-complete-toggle[data-complete="true"] { background:#2e7d32; }
+.note-complete-toggle:hover { background: var(--md-accent-fg-color); }
+.note-complete-toggle:focus-visible { outline:2px solid var(--md-accent-fg-color); outline-offset:2px; }
+@media (prefers-color-scheme: dark){
+  .note-complete-toggle { box-shadow:0 1px 2px rgba(0,0,0,.6); }
+}
+.note-meta-badges { margin: .5rem 0 1rem; }
+
+/* Table fine-tuning */
+.md-typeset table th, .md-typeset table td { vertical-align: top; }
+
+/* Back to top link style from original */
+.back-top a { font-size: .7rem; text-transform: uppercase; letter-spacing: .7px; }
+
+/* Note completion section */
+.note-completion-section { margin:2.75rem 0 1.5rem; padding:1.25rem 1rem 1rem; border:1px dashed var(--md-primary-fg-color); border-radius:10px; background:rgba(var(--app-accent-rgb), .06); position:relative; }
+.note-completion-section .note-sep { display:none; }
+.note-completion-inner { display:flex; flex-direction:column; gap:.75rem; }
+.note-completion-status { font-size:.8rem; letter-spacing:.5px; text-transform:uppercase; opacity:.85; }
+.note-completion-status[data-status="complete"] { color: var(--badge-complete-bg); }
+.note-completion-status[data-status="incomplete"] { color: var(--md-accent-fg-color); }
+.note-completion-actions { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
+.note-reset-toggle { cursor:pointer; background:transparent; border:1px solid var(--progress-fill); color:var(--progress-fill); padding:4px 10px; font-size:.6rem; letter-spacing:.5px; text-transform:uppercase; border-radius:16px; font-weight:600; }
+.note-reset-toggle:hover { background:var(--progress-fill); color:#fff; }
+.note-curriculum-link { font-size:.65rem; letter-spacing:.5px; text-transform:uppercase; text-decoration:none; font-weight:600; color:var(--md-accent-fg-color); }
+.note-curriculum-link:hover { text-decoration:underline; }
+.note-completion-hint { margin:.25rem 0 0; font-size:.6rem; opacity:.6; }
+
+@media (prefers-color-scheme: dark){
+  .note-completion-section { background:rgba(var(--app-accent-rgb), .10); }
+  .note-reset-toggle { border-color:var(--md-accent-fg-color); color:var(--md-accent-fg-color); }
+  .note-reset-toggle:hover { background:var(--md-accent-fg-color); color:#fff; }
+}
+
+/* Mini progress widget */
+.mini-progress-widget { margin:1.5rem 0 2rem; padding:.9rem .85rem .8rem; border:1px solid rgba(0,0,0,.08); border-radius:10px; background:linear-gradient(135deg, rgba(var(--app-accent-rgb), .09), rgba(var(--app-primary-rgb), .03)); max-width:340px; font-size:.7rem; }
+[data-md-color-scheme=slate] .mini-progress-widget { border-color:rgba(255,255,255,.07); }
+.mini-progress-widget .mpw-bar { position:relative; height:9px; background:var(--progress-bg); border-radius:6px; overflow:hidden; margin:0 0 .55rem; }
+.mini-progress-widget .mpw-bar-fill { position:absolute; inset:0 100% 0 0; background:var(--progress-fill); width:0%; transition:width .45s cubic-bezier(.65,.05,.36,1); }
+.mini-progress-widget .mpw-stats { display:flex; justify-content:space-between; font-weight:600; letter-spacing:.5px; }
+.mini-progress-widget .mpw-percent { opacity:.75; }
+.mini-progress-widget:hover { box-shadow:0 2px 4px -1px rgba(0,0,0,.18); }
+
+/* Enhanced circular variant */
+.mini-progress-widget .mpw-top { display:flex; gap:.85rem; align-items:center; }
+.mini-progress-widget .mpw-circle { --circle-size:72px; }
+.mini-progress-widget .mpw-circle-bg, .mini-progress-widget .mpw-circle-fg { fill:none; stroke-width:4; }
+.mini-progress-widget .mpw-circle-bg { stroke: var(--progress-bg); }
+.mini-progress-widget .mpw-circle-fg { stroke: var(--progress-fill); stroke-linecap:round; transform:rotate(-90deg); transform-origin:50% 50%; transition: stroke-dashoffset .55s cubic-bezier(.65,.05,.36,1); }
+.mini-progress-widget .mpw-circle-text { font-size: .55rem; font-weight:600; fill: var(--md-primary-fg-color); }
+[data-md-color-scheme=slate] .mini-progress-widget .mpw-circle-text { fill: var(--md-accent-fg-color); }
+.mini-progress-widget .mpw-meta { display:flex; flex-direction:column; gap:.3rem; font-size:.65rem; }
+.mini-progress-widget .mpw-toggle-remaining { cursor:pointer; background:transparent; border:1px solid var(--progress-fill); color:var(--progress-fill); font-size:.55rem; padding:3px 8px; border-radius:12px; font-weight:600; letter-spacing:.5px; }
+.mini-progress-widget .mpw-toggle-remaining:hover { background:var(--progress-fill); color:#fff; }
+.mini-progress-widget .mpw-remaining { margin-top:.6rem; }
+.mini-progress-widget .mpw-remaining.hidden { display:none; }
+.mini-progress-widget .mpw-remaining-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:.35rem .6rem; }
+.mini-progress-widget .mpw-remaining-list li { margin:0; }
+.mini-progress-widget .mpw-remaining-list a { display:inline-block; padding:2px 6px; border-radius:6px; font-size:.55rem; text-decoration:none; background:rgba(0,0,0,.05); color:inherit; line-height:1.2; }
+[data-md-color-scheme=slate] .mini-progress-widget .mpw-remaining-list a { background:rgba(255,255,255,.08); }
+.mini-progress-widget .mpw-remaining-list a:hover { background:var(--progress-fill); color:#fff; }
+.mini-progress-widget .mpw-empty { font-size:.55rem; opacity:.65; grid-column:1 / -1; text-align:center; padding:.3rem 0; }
