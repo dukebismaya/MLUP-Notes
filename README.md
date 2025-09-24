@@ -53,11 +53,14 @@ mkdocs build
 Outputs static site to `site/` (add to `.gitignore` if not already).
 
 ## Deploying to GitHub Pages
-Simplest: built-in deploy command (creates/updates `gh-pages` branch):
+**Automated Deployment**: This repository is configured with GitHub Actions for automatic deployment to GitHub Pages. Any push to the `main` branch will automatically build and deploy the site to `https://dukebismaya.github.io/MLUP-Notes/`.
+
+**Manual Deployment** (optional): You can also deploy manually using MkDocs' built-in command:
 ```powershell
 mkdocs gh-deploy --clean
 ```
-Make sure repository Settings → Pages points to `gh-pages` branch (root).
+
+**Repository Settings**: Ensure repository Settings → Pages is configured to deploy from "GitHub Actions" (this should be set automatically when the workflow runs).
 
 ## Adding New Notes
 1. Create a new markdown file: `docs/notes/note16.md` (or a semantic name).  
