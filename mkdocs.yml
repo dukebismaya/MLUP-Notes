@@ -1,7 +1,7 @@
 site_name: Dev Bismaya – AI & ML Notes
 site_description: Structured, searchable AI & Machine Learning notes and explorations.
 site_url: https://example.com/
-repo_url: https://github.com/your/repo
+repo_url: https://github.com/dukebismaya/MLUP-Notes
 copyright: "© 2025 Bismaya"
 theme:
   name: material
@@ -36,9 +36,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/yourprofile
+      link: https://www.linkedin.com/in/bismaya-jyoti-d-74692a328/
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername
+      link: https://github.com/dukebismaya
   generator: false
   favicon: assets/images/favicon.svg
 markdown_extensions:
