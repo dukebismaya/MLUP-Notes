@@ -79,7 +79,7 @@
 /* Note completion button */
 .note-complete-toggle { cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; background:var(--md-primary-fg-color); color:#fff; border:none; padding:4px 10px; border-radius:18px; font-size:.6rem; letter-spacing:.5px; text-transform:uppercase; font-weight:600; box-shadow:0 1px 2px rgba(0,0,0,.3); }
 .note-complete-toggle[data-complete="true"] { background:#2e7d32; }
-.note-complete-toggle:hover { background: var(--md-accent-fg-color); }
+.note-complete-toggle:hover { background: var(--md-primary-fg-color--dark); color:#fff; }
 .note-complete-toggle:focus-visible { outline:2px solid var(--md-accent-fg-color); outline-offset:2px; }
 @media (prefers-color-scheme: dark){
   .note-complete-toggle { box-shadow:0 1px 2px rgba(0,0,0,.6); }
@@ -103,13 +103,14 @@
 .note-reset-toggle { cursor:pointer; background:transparent; border:1px solid var(--progress-fill); color:var(--progress-fill); padding:4px 10px; font-size:.6rem; letter-spacing:.5px; text-transform:uppercase; border-radius:16px; font-weight:600; }
 .note-reset-toggle:hover { background:var(--progress-fill); color:#fff; }
 .note-curriculum-link { font-size:.65rem; letter-spacing:.5px; text-transform:uppercase; text-decoration:none; font-weight:600; color:var(--md-accent-fg-color); }
-.note-curriculum-link:hover { text-decoration:underline; }
+.note-curriculum-link:hover { text-decoration:underline; color: var(--md-accent-fg-color); }
 .note-completion-hint { margin:.25rem 0 0; font-size:.6rem; opacity:.6; }
 
 @media (prefers-color-scheme: dark){
   .note-completion-section { background:rgba(var(--app-accent-rgb), .10); }
-  .note-reset-toggle { border-color:var(--md-accent-fg-color); color:var(--md-accent-fg-color); }
-  .note-reset-toggle:hover { background:var(--md-accent-fg-color); color:#fff; }
+  /* Keep reset button using primary color for proper contrast in dark mode */
+  .note-reset-toggle { border-color:var(--progress-fill); color:var(--progress-fill); }
+  .note-reset-toggle:hover { background:var(--progress-fill); color:#fff; }
 }
 
 /* Mini progress widget */
