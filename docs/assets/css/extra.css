@@ -64,9 +64,10 @@
     --badge-planning-bg: #fbc02d;
     --badge-upcoming-bg: #5d4037;
   }
-  /* Improve KaTeX contrast in dark mode */
-  .katex { color: #eceff1; }
 }
+
+/* KaTeX: match surrounding text color in all themes */
+.md-typeset .katex { color: currentColor; }
 
 /* Progress bar component */
 .curriculum-progress { margin: 1.5rem 0 2rem; }
