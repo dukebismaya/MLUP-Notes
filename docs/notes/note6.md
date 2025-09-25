@@ -121,7 +121,7 @@ Residual $e_i = y_i - \hat{y}_i$ (difference between actual and predicted). A go
 | Histogram / KDE of Residuals | Assess normality | Bell-shaped, centered at 0 |
 | Q-Q Plot | Quantify deviation from normal | Points ~ straight line |
 | Residuals vs Feature (each X) | Check overlooked non-linearity | No structure |
-| Scale-Location (|resid|^0.5 vs fitted) | Homoscedasticity | Flat horizontal band |
+| Scale-Location ($\sqrt{\lvert resid \rvert}$) vs fitted | Homoscedasticity | Flat horizontal band |
 | Leverage vs Residual (Cook’s Distance) | Influential points | Few, small influence |
 
 ### Remedies When Issues Found
