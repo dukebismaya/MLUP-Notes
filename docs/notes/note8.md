@@ -21,7 +21,7 @@ Average absolute deviation. Interpretable (same units as target). Robust to larg
 $\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$
 Squares residuals → penalizes larger errors more. Smooth gradient (useful for optimization). Sensitive to outliers.
 
-### (c) Root Mean Squared Error (RMSE)
+### &#40;c&#41; Root Mean Squared Error (RMSE)
 $\text{RMSE} = \sqrt{\text{MSE}}$
 Same units as target. More interpretable than MSE; still emphasizes larger errors.
 
