@@ -99,6 +99,7 @@ nav:
   - Module 4 – Production & Ethics (Coming Soon):
     - Overview: notes/module4.md
     - note15 (placeholder link retained): notes/note15.md
+    - Clustering Fundamentals: notes/module4-clustering.md
 plugins:
   - search
   - tags
