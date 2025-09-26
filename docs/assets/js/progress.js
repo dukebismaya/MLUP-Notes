@@ -4,10 +4,22 @@
   const STORAGE_KEY = 'note-completion-v1';
 
   function getNoteId(){
-    // Derive note id from URL path (e.g., /notes/note6/ -> note6)
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    const note = parts.find(p => /^note\d+/.test(p));
-    return note || null;
+    // Derive a stable note id from URL path for ANY page under /notes/
+    // Examples:
+    //  - /notes/note6/               -> note6
+    //  - /notes/module4-clustering/  -> module4-clustering
+    //  - /notes/module3-iris-classification/ -> module3-iris-classification
+    const path = window.location.pathname.replace(/\/index\.html$/, '');
+    const parts = path.split('/').filter(Boolean);
+    const notesIdx = parts.indexOf('notes');
+    if (notesIdx >= 0 && parts.length > notesIdx + 1) {
+      let slug = parts[notesIdx + 1];
+      slug = slug.replace(/\.html$/, '').replace(/\/index$/, '');
+      return slug || null;
+    }
+    // Fallback to legacy pattern
+    const legacy = parts.find(p => /^note\d+/.test(p));
+    return legacy || null;
   }
 
   function loadState(){
@@ -84,13 +96,16 @@
   }
 
   function extractAllNoteIds(){
-    // Based on nav listing; fallback pattern note1..note99 if curriculum page has them
+    // Collect all unique slugs under /notes/ from the navigation
     const links = Array.from(document.querySelectorAll('nav a, .md-nav a')).map(a=>a.getAttribute('href'));
     const ids = new Set();
     links.forEach(href => {
       if(!href) return;
-      const m = href.match(/notes\/(note\d+)\.md|notes\/(note\d+)\//);
-      if(m){ ids.add(m[1] || m[2]); }
+      const m = href.match(/(?:^|\/)notes\/(.+?)(?:\/?|\.html|\.md)(?:#|$)/);
+      if(m){
+        let slug = m[1].replace(/\.md$/, '').replace(/\/index$/, '');
+        if(slug) ids.add(slug);
+      }
     });
     return Array.from(ids).sort();
   }
@@ -98,8 +113,8 @@
   function updateOverallProgress(){
     const fill = document.getElementById('curriculum-progress-fill');
     const pct = document.getElementById('curriculum-progress-percent');
-    const state = loadState();
-    const notes = extractAllNoteIds().filter(id => /note\d+/.test(id));
+  const state = loadState();
+  const notes = extractAllNoteIds();
     if(notes.length){
       const done = notes.filter(id => state[id]).length;
       const percent = Math.round(done/notes.length*100);
