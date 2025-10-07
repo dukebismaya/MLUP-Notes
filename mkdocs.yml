@@ -5,6 +5,7 @@ repo_url: https://github.com/dukebismaya/MLUP-Notes
 copyright: "© 2025 Bismaya"
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.instant
     - navigation.tracking
@@ -78,6 +79,7 @@ extra_css:
 nav:
   - Home: index.md
   - Curriculum: curriculum.md
+  - Tags: tags/index.md
   - Module 1 – Foundations:
     - note1: notes/note1.md
     - note2: notes/note2.md
@@ -93,13 +95,20 @@ nav:
     - note11: notes/note11.md
     - note12: notes/note12.md
     - note13: notes/note13.md
-  - Module 3 – Advanced ML (Coming Soon):
+  - Module 3 – Classification & Model Evaluation:
     - Overview: notes/module3.md
-    - note14 (placeholder link retained): notes/note14.md
-  - Module 4 – Production & Ethics (Coming Soon):
+    - Iris Classification (Note 1): notes/module3-iris-classification.md
+    - KNN – Mathematical Formulation: notes/module3-knn-math.md
+    - KNN – scikit-learn Implementation: notes/module3-knn-implementation.md
+    - Decision Trees – Steps for Classification: notes/module3-decision-trees.md
+    - Support Vector Machines – Classification: notes/module3-svm-classification.md
+    - Support Vector Machines – Binary Classification: notes/module3-svm-binary.md
+    - Model Evaluation Metrics: notes/module3-evaluation-metrics.md
+  - Video Library: notes/module3-video-library.md
+  - Module 4 – MLOps & Responsible AI:
     - Overview: notes/module4.md
-    - note15 (placeholder link retained): notes/note15.md
     - Clustering Fundamentals: notes/module4-clustering.md
+    - Centroids: notes/module4-centroids.md
 plugins:
   - search
   - tags

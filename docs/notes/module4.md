@@ -1,12 +1,12 @@
 ---
-title: "Module 4 – Coming Soon"
-description: "Production ML, Ethics, and Lifecycle Management (preview)"
-tags: [module, coming-soon]
+title: "Module 4 – MLOps & Responsible AI"
+description: "Operationalizing machine learning with governance, monitoring, and responsible AI practices"
+tags: [module]
 ---
 
-# Module 4 – Coming Soon
+# Module 4 – MLOps & Responsible AI
 
-This module will cover the full lifecycle and governance aspects of ML.
+This module covers the full lifecycle and governance aspects of ML, from deployment to responsible oversight.
 
 ## Planned Topics (Tentative)
 - MLOps Foundations (CI/CD for ML)
@@ -16,4 +16,4 @@ This module will cover the full lifecycle and governance aspects of ML.
 - Fairness, Bias Mitigation & Responsible AI
 - Secure & Privacy-Preserving ML
 
-> Status: Planning phase. Outline subject to refinement.
+> Status: In development. Sections will expand iteratively with hands-on guides and case studies.

@@ -56,7 +56,7 @@
         <div class="note-completion-actions">
           <button type="button" class="note-complete-toggle" data-complete="${isDone}"> ${isDone ? '✓ Note Completed' : 'Mark as Complete'} </button>
           <button type="button" class="note-reset-toggle" aria-label="Reset completion for this note" title="Reset completion">Reset</button>
-            <a class="note-curriculum-link" href="${relToRoot}/curriculum/" title="View overall curriculum progress">View Curriculum Progress →</a>
+            <a class="note-curriculum-link" href="${relToRoot}/MLUP-Notes/curriculum/" title="View overall curriculum progress">View Curriculum Progress →</a>
         </div>
         <p class="note-completion-hint">Progress is stored locally in your browser (no server sync). Clearing site data resets it.</p>
       </div>`;

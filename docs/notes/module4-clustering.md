@@ -57,6 +57,8 @@ K‑Means partitions the dataset into k clusters by minimizing within‑cluster 
 - Gap statistic: compare to a null reference distribution.
 - Domain knowledge: interpretability and business constraints often drive k.
 
+> See also: [Centroids](module4-centroids.md) for geometric intuition and formulas used by K‑Means.
+
 ### Why k matters
 - Too small: distinct groups get merged (underfitting).
 - Too large: natural groups get split (overfitting).
@@ -140,6 +142,11 @@ Notes:
 ---
 
 # Choosing k with the Elbow method
+<div class="video-embed" style="margin:1rem 0">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/wW1tgWtkj4I" title="Elbow Method for KMeans" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="mdx-caption">Video: Elbow method intuition and steps</div>
+  
+</div>
 ```python
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
@@ -159,6 +166,10 @@ plt.show()
 Tip:
 - Look for the “elbow” where adding clusters yields diminishing returns.
 
+### References
+- K‑Means introduction (GeeksforGeeks): https://www.geeksforgeeks.org/machine-learning/k-means-clustering-introduction/
+- Elbow method (GeeksforGeeks): https://www.geeksforgeeks.org/machine-learning/elbow-method-for-optimal-value-of-k-in-kmeans/
+
 ---
 
 # Practical notes
@@ -167,3 +178,4 @@ Tip:
 - Initialize with `k-means++` (default in scikit‑learn) for better convergence.
 - Run with several initializations (`n_init`) to avoid poor local minima.
 - Inspect inertia, silhouette score, and cluster profiles to choose k.
+

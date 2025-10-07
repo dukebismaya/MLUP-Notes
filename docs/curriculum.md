@@ -28,16 +28,16 @@ A structured progression from fundamentals through modeling depth and into produ
   **Includes:** Note 6–13  
   [:arrow_forward: Start Module 2](notes/note6.md)
 
-- 🧮 **Module 3 – Advanced ML**  
+- 🧮 **Module 3 – Classification & Model Evaluation**  
   **Status:** <span class="badge badge-planning">In Planning</span><br>
-  *Probabilistic methods, ensembles, feature selection vs extraction, interpretability.*  
-  **Includes (planned):** Bayesian, Ensembles, SHAP, Regularization Paths  
+  *Hands-on classification pipelines, support vector machines, KNN, and evaluation diagnostics (with probabilistic and ensemble methods on the way).*  
+  **Includes (planned):** Classification workflows, Evaluation metrics, Bayesian methods, Ensembles  
   [:hourglass_flowing_sand: Placeholder](notes/module3.md)
 
-- 🏭 **Module 4 – Production & Ethics**  
+- 🏭 **Module 4 – MLOps & Responsible AI**  
   **Status:** <span class="badge badge-planning">In Planning</span><br>
   *MLOps lifecycle, deployment patterns, monitoring, drift, governance & fairness.*  
-  **Includes (planned):** Deployment, Monitoring, Fairness, Governance  
+  **Includes (planned):** Deployment, Monitoring, Responsible AI, Governance  
   [:hourglass_flowing_sand: Placeholder](notes/module4.md)
 
 </div>
@@ -48,15 +48,15 @@ You can track personal completion using a simple checklist:
 
 - [x] Module 1 – Foundations
 - [x] Module 2 – Regression & Dimensionality Reduction
-- [ ] Module 3 – Advanced ML
-- [ ] Module 4 – Production & Ethics
+- [ ] Module 3 – Classification & Model Evaluation
+- [ ] Module 4 – MLOps & Responsible AI
 
 ---
 ## Suggested Learning Order
 1. Read all Module 1 to build terminology & tooling base.
 2. Work through Module 2 while experimenting in notebooks (diagnostics + PCA).
-3. (Upcoming) TODO: Will be added by Bismaya (Module 3).
-4. (Upcoming) TODO: Will be added by Bismaya (Module 4).
+3. Deep-dive into Module 3 classification & evaluation resources, building models and diagnostics in tandem.
+4. Explore Module 4 MLOps & Responsible AI practices, focusing on deployment, monitoring, and governance labs.
 
 ---
 ## Extending This Page

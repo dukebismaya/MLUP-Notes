@@ -1,0 +1,31 @@
+{% if page.meta and page.meta.hide %}
+  {% set hidden = "hidden" if "tags" in page.meta.hide %}
+{% endif %}
+{% set combined = tags %}
+{% if not combined %}
+  {% set combined = [] %}
+  {% if page.meta and page.meta.tags %}
+    {% for raw in page.meta.tags %}
+      {% if raw %}
+        {% set name = raw|string %}
+        {% set slug = name | lower | replace(' ', '-') %}
+        {% set combined = combined + [{'name': name, 'slug': slug}] %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endif %}
+{% if combined %}
+  <nav class="md-tags" {{ hidden }}>
+    {% for tag in combined %}
+      {% set name = tag.name if tag.name is defined else (tag|string) %}
+      {% if tag.url is defined %}
+        {% set url = tag.url %}
+      {% elif tag.slug is defined %}
+        {% set url = 'tags/#tag:' + tag.slug %}
+      {% else %}
+        {% set url = 'tags/#tag:' + (name | lower | replace(' ', '-')) %}
+      {% endif %}
+      <a href="{{ url | url }}" class="md-tag">{{ name }}</a>
+    {% endfor %}
+  </nav>
+{% endif %}
