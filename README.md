@@ -1,114 +1,71 @@
-# Dev Bismaya – AI & ML Notes (MkDocs)
+# 🚀 AI & ML Learning Hub
 
-This repository has been migrated from a custom single-page app (Primer CSS + Marked + DOMPurify) to a **MkDocs Material** documentation site with built‑in search, navigation, and KaTeX math rendering.
+> **Created By Bismaya**
 
-## Current Stack
-| Layer | Tool | Purpose |
-|-------|------|---------|
-| Static Site Generator | MkDocs + Material theme | Structure, navigation, search |
-| Markdown Extensions | `pymdownx.*` | Admonitions, details, code fences, math hooks |
-| Math | KaTeX (`pymdownx.arithmatex`) | `$..$`, `$$..$$`, `\( .. \)`, `\[ .. \]` |
-| Styling | Material + `docs/assets/css/extra.css` | Badge + minor layout tweaks |
-| JS Enhancements | `docs/assets/js/math.js` | Re-render math after instant navigation |
+![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+![Last Updated](https://img.shields.io/badge/Updated-2026-orange?style=flat-square)
 
-## Key Features
-- Instant navigation (Material `navigation.instant`)
-- Dark / light palette switching
-- First‑class search (lunr) with no custom indexing code
-- KaTeX math rendering for inline & block formulas
-- Collapsible sections using `<details>` or `pymdownx.details`
-- Syntax highlighting & copy buttons
-- Front matter–like tags retained (can later integrate a tags index)
+## 🚀 Quick Start
 
-## Project Structure (Post-Migration)
-```
-mkdocs.yml                     # MkDocs configuration (theme, nav, extensions)
-docs/
-	index.md                     # Landing page
-	notes/                       # All note markdown files
-		note1.md ... note15.md
-	assets/
-		css/extra.css              # Custom overrides
-		js/math.js                 # Math auto-render helper
-```
+### View Online
+Visit the live site: [Dev Bismaya – AI & ML Hub](https://dukebismaya.github.io/MLUP-Notes/)
 
-Legacy files removed: `index.html`, `assets/js/app.js`, `sw.js` (service worker), and the old SPA-specific CSS/JS logic. If you still need any styling snippets from `assets/css/custom.css`, migrate relevant rules into `docs/assets/css/extra.css`.
+### Run Locally
 
-## Local Development
-Activate your Python environment (optional if using system Python), then:
+**Requirements:**
+- Python 3.8+
+- pip or conda
 
-```powershell
-pip install mkdocs mkdocs-material pymdown-extensions
+**Setup:**
+
+```bash
+# Clone the repository
+git clone https://github.com/dukebismaya/MLUP-Notes.git
+cd MLUP-Notes
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the development server
 mkdocs serve
+
+# Site will be available at http://127.0.0.1:8000
 ```
 
-Open: http://127.0.0.1:8000/
+**Build for production:**
 
-The site auto-reloads on file changes under `docs/`.
-
-## Building For Deployment
-```powershell
-mkdocs build
-```
-Outputs static site to `site/` (add to `.gitignore` if not already).
-
-## Deploying to GitHub Pages
-**Automated Deployment**: This repository is configured with GitHub Actions for automatic deployment to GitHub Pages. Any push to the `main` branch will automatically build and deploy the site to `https://dukebismaya.github.io/MLUP-Notes/`.
-
-**Manual Deployment** (optional): You can also deploy manually using MkDocs' built-in command:
-```powershell
-mkdocs gh-deploy --clean
+```bash
+mkdocs build  # Creates 'site/' directory with static HTML
 ```
 
-**Repository Settings**: Ensure repository Settings → Pages is configured to deploy from "GitHub Actions" (this should be set automatically when the workflow runs).
+## 📜 License
 
-## Adding New Notes
-1. Create a new markdown file: `docs/notes/note16.md` (or a semantic name).  
-2. Add it to the `nav:` section in `mkdocs.yml` under the Notes group.  
-3. (Optional) Include tags in a front matter style block at top for future tag indexing.
+This project is licensed under the **MIT License** — see [LICENSE](LICENSE) file for details.
 
-Example front matter style (retained as plain YAML at top):
-```markdown
----
-title: "Advanced Dimensionality Reduction"
-description: "Manifold and probabilistic approaches"
-tags: [dimensionality-reduction, manifolds]
----
-```
+**Summary:** You're free to use, modify, and distribute this content for personal, educational, or commercial purposes.
 
-## Math Usage
-Inline: `$L = -\sum_i y_i \log p_i$`  
-Block:
-```markdown
-$$
-VR(k)=\frac{\sum_{i=1}^k \lambda_i}{\sum_{i=1}^n \lambda_i}
-$$
-```
 
-## Extension Highlights in `mkdocs.yml`
-- `pymdownx.arithmatex` – math bridging to KaTeX
-- `pymdownx.details` – collapsible sections
-- `pymdownx.superfences` – nested code fences & tabs
-- `pymdownx.highlight` – enhanced code highlighting + line anchors
+## 📊 Project Stats
 
-## Migrating Additional Styling
-If you had custom layout or typography from `custom.css`, copy only the needed rules into `docs/assets/css/extra.css` to avoid theme conflicts.
-
-## Future Enhancements
-- Add a tags index page (`material` + custom plugin or a simple manual page).
-- Introduce versioning with `mike` if you want historical snapshots.
-- Add `mkdocs-minify-plugin` for smaller assets.
-- Add `mkdocs-pwa-plugin` if offline capability is desired again.
-
-## Troubleshooting
-| Issue | Likely Cause | Fix |
-|-------|--------------|-----|
-| Math not rendering | KaTeX JS blocked / not loaded | Check console/network; ensure CDN reachable |
-| New note not in nav | Missing nav entry in `mkdocs.yml` | Add under `nav:` and re-serve |
-| Search misses new note | Build cache during dev | Refresh page; ensure file saved |
-
-## License
-MIT (add a LICENSE file if distributing publicly).
+- 📝 **Total Notes:** 15+
+- 🎓 **Modules:** 4
+- 📚 **Topics:** 40+
+- ⭐ **Last Updated:** January 2026
+- 👥 **GitHub Stars:** [⭐ Star this repo!](https://github.com/dukebismaya/MLUP-Notes)
 
 ---
-_Migrated on: 2025-09-24_
+
+<div align="center">
+
+**Created By Bismaya**
+
+[💼 LinkedIn](https://www.linkedin.com/in/bismaya-jyoti-d-74692a328/)
+[🐙 GitHub](https://github.com/dukebismaya)
+[📧 Email](mailto:bismayajd@gmail.com)
+
+</div>
